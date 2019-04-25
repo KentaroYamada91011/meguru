@@ -1,6 +1,13 @@
 <template>
   <header>
     <div>
+      <no-ssr>
+        <Slide>
+          <a id="home" href="#">
+            <span>Home</span>
+          </a>
+        </Slide>
+      </no-ssr>
       <span class="blog-title" to="/" @click.prevent="homeScrollTop">
         <h1 v-html="meta.name"></h1>
       </span>
@@ -17,10 +24,12 @@
 
 <script>
 import TheHeaderSearch from '~/components/TheHeaderSearch'
+// import { Slide } from 'vue-burger-menu'
 
 export default {
   components: {
     TheHeaderSearch
+    // Slide
   },
 
   computed: {
@@ -115,5 +124,9 @@ header {
       }
     }
   }
+}
+
+.bm-burger-button {
+  display: grid;
 }
 </style>

@@ -53,7 +53,8 @@ module.exports = {
     { src: '~plugins/vue-scrollto', ssr: false },
     { src: '~plugins/web-font-loader', ssr: false },
     { src: '~plugins/mixins' },
-    { src: '~plugins/vue-tabs-with-active-line.js', ssr: false }
+    { src: '~plugins/vue-tabs-with-active-line.js', ssr: false },
+    { src: '~plugins/vue-burger-menu.js', ssr: false }
   ],
 
   vendor: ['lightgallery.js']

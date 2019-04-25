@@ -153,7 +153,7 @@ a {
 
 .fancy {
   cursor: pointer;
-  
+
   &:hover {
     color: $accent;
   }
