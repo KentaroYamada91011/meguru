@@ -4,7 +4,9 @@
       <no-ssr>
         <Slide>
           <a id="home" href="#">
-            <span>Home</span>
+            <span class="bm-menu-link"><nuxt-link to="/" exact>Latest Articles</nuxt-link></span>
+            <span class="bm-menu-link"><nuxt-link to="/topics">Topics</nuxt-link></span>
+            <span class="bm-menu-link"><nuxt-link to="/authors">Authors</nuxt-link></span>
           </a>
         </Slide>
       </no-ssr>
@@ -24,12 +26,10 @@
 
 <script>
 import TheHeaderSearch from '~/components/TheHeaderSearch'
-// import { Slide } from 'vue-burger-menu'
 
 export default {
   components: {
     TheHeaderSearch
-    // Slide
   },
 
   computed: {
@@ -46,6 +46,8 @@ export default {
 
 <style lang="scss" scoped>
 @import '~assets/css/vars.scss';
+@import '~assets/css/vue-burger-menu.scss';
+
 
 header {
   font-family: 'Roboto', sans-serif;
@@ -126,7 +128,4 @@ header {
   }
 }
 
-.bm-burger-button {
-  display: grid;
-}
 </style>

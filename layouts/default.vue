@@ -27,6 +27,8 @@ export default {
 
 <style lang="scss">
 @import '~assets/css/vars.scss';
+@import '~assets/css/vue-burger-menu.scss';
+// @import '~assets/css/common/variables.scss';
 
 .blog * {
   -moz-osx-font-smoothing: grayscale;
@@ -255,4 +257,5 @@ pre {
   position: relative;
   margin: auto;
 }
+
 </style>
