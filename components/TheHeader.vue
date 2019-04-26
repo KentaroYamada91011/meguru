@@ -79,12 +79,13 @@ header {
 
     @media (max-width: 700px) {
       margin-right: 16px;
+      margin-left: calc(50% - 67px);
     }
 
     h1 {
       color: #666;
       cursor: pointer;
-      font-size: 1.1rem;
+      font-size: 1.5rem;
       font-weight: 400;
     }
   }
@@ -92,8 +93,8 @@ header {
   nav {
     flex-shrink: 0;
 
-    @media (max-width: 500px) {
-      // display: none;
+    @media (max-width: 700px) {
+      display: none;
       a {
         font-size: 0.5rem;
       }
