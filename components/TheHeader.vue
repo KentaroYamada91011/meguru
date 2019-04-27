@@ -3,7 +3,6 @@
     <div>
       <no-ssr>
         <Slide>
-          <a id="home" href="#">
             <span class="bm-menu-link"><nuxt-link to="/" exact>Latest Articles</nuxt-link></span>
             <span class="bm-menu-link"><nuxt-link to="/topics">Topics</nuxt-link></span>
             <span class="bm-menu-link"><nuxt-link to="/authors">Authors</nuxt-link></span>
