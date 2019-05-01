@@ -17,13 +17,16 @@
   right: 0;
 }
 .cross-style {
-  position: absolute;
+  position: absolute!important;
   top: 12px;
   right: 2px;
   cursor: pointer;
 }
 .bm-cross {
+  position: absolute!important;
   background: #bdc3c7;
+  // left: 19px;
+  // bottom: 206px;
 }
 .bm-cross-button {
   height: 24px;
@@ -68,6 +71,7 @@
 }
 
 .bm-menu-link {
+  white-space: nowrap;
   a {
     font-size: 24px;
   }

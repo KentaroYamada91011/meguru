@@ -3,7 +3,7 @@
     <div>
       <no-ssr>
         <Slide>
-            <span class="bm-menu-link"><nuxt-link to="/" exact>Latest Articles</nuxt-link></span>
+            <span class="bm-menu-link"><nuxt-link to="/" exact>最新記事</nuxt-link></span>
             <span class="bm-menu-link"><nuxt-link to="/topics">Topics</nuxt-link></span>
             <span class="bm-menu-link"><nuxt-link to="/authors">Authors</nuxt-link></span>
           </a>
@@ -77,8 +77,8 @@ header {
     margin-right: 32px;
 
     @media (max-width: 700px) {
-      margin-right: 16px;
-      margin-left: calc(50% - 67px);
+      position: absolute;
+      margin-left: calc(50% - 46px);
     }
 
     h1 {
