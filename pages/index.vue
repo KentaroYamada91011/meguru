@@ -5,9 +5,6 @@
         v-if="heroArticle"
         :hero-article="heroArticle"
       />
-      <div class="Article__pc">
-        <ArticleList :articles="$store.state.articles"/>
-      </div>
       <div>
         <tabs
           :tabs="tabs"
@@ -179,19 +176,10 @@ export default {
   }
 }
 
-.Article__pc {
-  @media (max-width: 1000px) {
-    display: none;
-  }
-}
-
 .tabs {
   position: relative;
   margin: 0 auto;
   text-align: center;
-  @media (min-width: 1000px) {
-    display: none;
-  }
 
   &__active-line {
     position: absolute;
