@@ -1,7 +1,18 @@
 <template>
   <aside>
+    <div class="page">
+      <h2>エリア別グルメスポット</h2>
+      <h3>都心部</h3>
+      <ul>
+        <li v-for="topic in $store.state.areatopics" :key="topic.id">
+          <nuxt-link :to="`/topics/${topic.slug}`">
+            <h4 v-html="topic.name"></h4>
+          </nuxt-link>
+        </li>
+      </ul>
+    </div>
     <div class="inner-container">
-      <h1>Top Articles</h1>
+      <h2>Top Articles</h2>
       <article v-for="article in featuredArticles" :key="article.id">
         <nuxt-link :to="`/${article.slug}`" v-if="article._embedded['wp:featuredmedia']" class="image">
           <div class="featured lazy" v-if="featuredImage(article)">
@@ -176,6 +187,48 @@ aside {
         }
       }
     }
+  }
+}
+
+.page {
+  li {
+    display: inline-flex;
+  }
+  li:after {
+    content: " | ";
+    margin: 0 12px;
+  }
+  li:last-child:after {
+    content: "";
+  }
+  ul {
+    width: 80%;
+    margin: 24px auto;
+    padding: 12px 0;
+    text-align: center;
+  }
+  h2 {
+    width: 80%;
+    margin: 24px auto;
+    padding: 12px 0;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    border-bottom: 1px solid #000;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(0, 0, 0);
+    border-top: 1px solid #000;
+    border-top-width: 1px;
+    border-top-color: rgb(0, 0, 0);
+    text-align: center;
+  }
+  h3 {
+    width: 80%;
+    margin: 24px auto;
+    border: 1px solid #000;
+    text-align: center;
+  }
+  h4 {
+    margin: 0;
   }
 }
 </style>

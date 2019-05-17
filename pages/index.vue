@@ -68,6 +68,11 @@ export default {
       let articles = await app.$axios.get(`${store.state.wordpressAPI}/wp/v2/posts?orderby=date&per_page=10&categories=${store.state.featuredID}&_embed`)
       store.commit('setFeaturedArticles', articles.data)
     }
+
+    if (!store.state.topics) {
+      let areatopics = await app.$axios.get(`${store.state.wordpressAPI}/wp/v2/categories?parent=12&per_page=100`)
+      store.commit('setAreaTopics', areatopics.data)
+    }
   },
 
   components: {
