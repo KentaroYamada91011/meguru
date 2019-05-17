@@ -26,7 +26,7 @@
         <ArticleComments :article="article"/>
       </div>
     </transition>
-    <div v-html="linkRGB"></div>
+    <!-- <div v-html="linkRGB"></div> -->
   </article>
 </template>
 

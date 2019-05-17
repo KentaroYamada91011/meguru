@@ -29,7 +29,8 @@ const store = () => new Vuex.Store({
     },
     topicArticles: [],
     topics: null,
-    wordpressAPI: 'http://niko0420.sakura.ne.jp/wp-01/wp-json'
+    areatopics: null,
+    wordpressAPI: 'https://niko0420.sakura.ne.jp/wp-01/wp-json'
   },
 
   mutations: {
@@ -65,6 +66,9 @@ const store = () => new Vuex.Store({
     },
     setTopics (state, data) {
       state.topics = data
+    },
+    setAreaTopics (state, data) {
+      state.areatopics = data
     }
   }
 })
