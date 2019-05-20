@@ -62,6 +62,11 @@ export default {
 
 .hero {
   overflow: hidden;
+  @media (min-width: 1000px) {
+    max-width: 1000px;
+    height: 450px;
+
+  }
 
   &:hover {
     &::before {
@@ -137,6 +142,7 @@ export default {
   .featured-image {
     min-height: 440px;
     width: 100%;
+    height: -webkit-fill-available;
 
     .image {
       background-position: center;

@@ -1,48 +1,51 @@
 <template>
   <div class="home">
-    <div class="articles">
-      <TheHero
-        v-if="heroArticle"
-        :hero-article="heroArticle"
-      />
-      <div>
-        <tabs
-          :tabs="tabs"
-          :currentTab="currentTab"
-          :wrapper-class="'default-tabs'"
-          :tab-class="'default-tabs__item'"
-          :tab-active-class="'default-tabs__item_active'"
-          :line-class="'default-tabs__active-line'"
-          @onClick="handleClick"
-        />
-        <div class="content">
-          <div v-if="currentTab === 'tab1'">
-            <ArticleList :articles="$store.state.articles"/>
-          </div>
-          <div v-if="currentTab === 'tab2'">
-            <ArticleFeaturedList :articles="$store.state.featuredArticles"/>
+    <TheHero
+      v-if="heroArticle"
+      :hero-article="heroArticle"
+      class="heroimg"
+    />
+    <div class="contentWrapper">
+      <div class="articles">
+        <div>
+          <tabs
+            :tabs="tabs"
+            :currentTab="currentTab"
+            :wrapper-class="'default-tabs'"
+            :tab-class="'default-tabs__item'"
+            :tab-active-class="'default-tabs__item_active'"
+            :line-class="'default-tabs__active-line'"
+            @onClick="handleClick"
+          />
+          <div class="content">
+            <div v-if="currentTab === 'tab1'">
+              <ArticleList :articles="$store.state.articles"/>
+            </div>
+            <div v-if="currentTab === 'tab2'">
+              <ArticleFeaturedList :articles="$store.state.featuredArticles"/>
+            </div>
           </div>
         </div>
+        <InfiniteLoading
+          v-if="indexInfiniteLoading.enabled"
+          ref="infiniteLoading"
+          :on-infinite="moreArticles"
+        >
+          <span slot="spinner">
+            <Spinner1/>
+          </span>
+          <span slot="no-results">
+            <Smile/>
+            <div>No more articles!</div>
+          </span>
+          <span slot="no-more">
+            <Smile/>
+            <div>No more articles!</div>
+          </span>
+        </InfiniteLoading>
       </div>
-      <InfiniteLoading
-        v-if="indexInfiniteLoading.enabled"
-        ref="infiniteLoading"
-        :on-infinite="moreArticles"
-      >
-        <span slot="spinner">
-          <Spinner1/>
-        </span>
-        <span slot="no-results">
-          <Smile/>
-          <div>No more articles!</div>
-        </span>
-        <span slot="no-more">
-          <Smile/>
-          <div>No more articles!</div>
-        </span>
-      </InfiniteLoading>
+      <TheSidebar :featured-articles="$store.state.featuredArticles"/>
     </div>
-    <TheSidebar :featured-articles="$store.state.featuredArticles"/>
   </div>
 </template>
 
@@ -134,14 +137,25 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  display: flex;
+  // display: flex;
 
   .hero {
     margin: 0 -32px;
+    @media (min-width: 700px) {
+      margin: 30px auto;
+    }
+  }
+
+  .contentWrapper {
+    display: flex;
+    @media (min-width: 700px) {
+      width: 1000px;
+      margin: 30px auto;
+    }
   }
 
   .articles {
-    background-color: #efefef;
+    //background-color: #efefef;
     padding: 0 32px;
     max-width: 900px;
     width: 100%;
