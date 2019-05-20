@@ -10,12 +10,14 @@
         </Slide>
       </no-ssr>
       <span class="blog-title" to="/" @click.prevent="homeScrollTop">
-        <h1 v-html="meta.name"></h1>
+        <!-- <h1 v-html="meta.name"></h1> -->
+        <h1>メグルメ</h1>
       </span>
+      <h2>グルメ動画マガジン</h2>
       <nav>
-        <nuxt-link to="/" exact>Latest Articles</nuxt-link>
-        <nuxt-link to="/topics">Topics</nuxt-link>
-        <nuxt-link to="/authors">Authors</nuxt-link>
+        <nuxt-link to="/" exact>最新の記事</nuxt-link>
+        <nuxt-link to="/topics">トピックス</nuxt-link>
+        <nuxt-link to="/authors">ライター一覧</nuxt-link>
         <!-- <nuxt-link to="/pages/sample-page">Sample Page</nuxt-link> -->
       </nav>
       <TheHeaderSearch/>
@@ -58,7 +60,6 @@ header {
 
   > div {
     align-items: center;
-    border-bottom: 1px solid #d8d8d8;
     background-color: #fff;
     display: flex;
     height: 80px;
@@ -66,6 +67,7 @@ header {
     max-width: $containerWidth;
     padding: 0 32px;
     transition: padding-top 0.5s, padding-bottom 0.5s;
+    opacity: 0.9;
 
     @media (max-width: 700px) {
       height: 60px;
@@ -89,8 +91,16 @@ header {
     }
   }
 
+  h2 {
+    color: #666;
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-right: 16px;
+  }
+
   nav {
     flex-shrink: 0;
+    margin-left: auto;
 
     @media (max-width: 700px) {
       display: none;
