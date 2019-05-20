@@ -80,7 +80,7 @@ header {
 
     @media (max-width: 700px) {
       position: absolute;
-      margin-left: calc(50% - 46px);
+      margin-left: calc(50% - 64px);
     }
 
     h1 {
@@ -96,6 +96,9 @@ header {
     font-size: 0.8rem;
     font-weight: 400;
     margin-right: 16px;
+    @media (max-width: 700px) {
+      display: none;
+    }
   }
 
   nav {
