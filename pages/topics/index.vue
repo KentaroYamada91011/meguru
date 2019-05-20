@@ -35,7 +35,7 @@ export default {
 @import '~assets/css/vars.scss';
 
 .page {
-  background-color: #efefef;
+  //background-color: #efefef;
   padding: 32px;
 
   @media (max-width: 700px) {
