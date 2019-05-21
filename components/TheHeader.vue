@@ -67,7 +67,7 @@ header {
     max-width: $containerWidth;
     padding: 0 32px;
     transition: padding-top 0.5s, padding-bottom 0.5s;
-    opacity: 0.9;
+    background-color: rgba(255, 255, 255, 0.9);
 
     @media (max-width: 700px) {
       height: 60px;
