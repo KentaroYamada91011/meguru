@@ -112,7 +112,7 @@ export default {
   display: flex;
 
   .articles {
-    //background-color: #efefef;
+    //background-color: #ffffff;
     padding: 0 32px;
     max-width: 900px;
     width: 100%;

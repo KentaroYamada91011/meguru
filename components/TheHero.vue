@@ -62,10 +62,11 @@ export default {
 
 .hero {
   overflow: hidden;
+  margin: 24px;
   @media (min-width: 1000px) {
     max-width: 1000px;
     height: 450px;
-
+    margin: 0;
   }
 
   &:hover {
@@ -120,6 +121,9 @@ export default {
     text-transform: uppercase;
     top: 0;
     z-index: 2;
+    @media (max-width: 1000px) {
+      padding: 8px;
+    }
 
     .topic {
       & + .topic {
@@ -143,6 +147,10 @@ export default {
     min-height: 440px;
     width: 100%;
     height: -webkit-fill-available;
+    @media (max-width: 1000px) {
+      min-height: 240px;
+      height: auto;
+    }
 
     .image {
       background-position: center;
@@ -167,6 +175,9 @@ export default {
     text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
     transition: 0.4s;
     z-index: 2;
+    @media (max-width: 1000px) {
+      padding: 8px;
+    }
 
     h2 {
       color: #eee;

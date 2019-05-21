@@ -101,7 +101,7 @@ html.wf-inactive #blog {
 }
 
 main {
-  // background-color: #efefef;
+  background-color: #ffffff;
   margin: 0 auto;
   max-width: $containerWidth;
   min-height: calc(100vh - 80px - 200px);

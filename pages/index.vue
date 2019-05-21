@@ -137,10 +137,9 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  // display: flex;
 
   .hero {
-    margin: 0 -32px;
+    margin: 24px 12px;
     @media (min-width: 700px) {
       margin: 30px auto;
     }
@@ -155,7 +154,7 @@ export default {
   }
 
   .articles {
-    //background-color: #efefef;
+    //background-color: #ffffff;
     padding: 0 32px;
     max-width: 900px;
     width: 100%;
