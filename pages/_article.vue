@@ -170,7 +170,7 @@ export default {
 @import '~assets/css/vars.scss';
 
 article {
-  background-color: #efefef;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -185,7 +185,7 @@ article {
   }
 
   .narrow {
-    background-color: #efefef;
+    background-color: #ffffff;
     margin: 0 auto;
     max-width: 842px;
     min-height: calc(100vh - 80px - 96px - 200px);

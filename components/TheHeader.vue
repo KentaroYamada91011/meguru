@@ -3,9 +3,9 @@
     <div>
       <no-ssr>
         <Slide>
-            <span class="bm-menu-link"><nuxt-link to="/" exact>最新記事</nuxt-link></span>
-            <span class="bm-menu-link"><nuxt-link to="/topics">Topics</nuxt-link></span>
-            <span class="bm-menu-link"><nuxt-link to="/authors">Authors</nuxt-link></span>
+            <span class="bm-menu-link"><nuxt-link to="/" exact>最新の記事</nuxt-link></span>
+            <span class="bm-menu-link"><nuxt-link to="/topics">トピックス</nuxt-link></span>
+            <span class="bm-menu-link"><nuxt-link to="/authors">ライター一覧</nuxt-link></span>
           </a>
         </Slide>
       </no-ssr>
