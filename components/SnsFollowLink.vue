@@ -46,7 +46,7 @@ export default {
 
 <style lang="scss" scoped>
 
-.footer .footer-share {
+.footer-share {
   text-align: center;
   margin: 0;
   padding: 0;
