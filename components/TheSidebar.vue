@@ -68,6 +68,7 @@ export default {
 
 aside {
   min-width: 360px;
+  min-width: 360px;
   flex: 1;
 
   @media (max-width: 1000px) {

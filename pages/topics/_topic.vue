@@ -110,6 +110,8 @@ export default {
 
 .topic {
   display: flex;
+  width: 1000px;
+  margin: 30px auto;
 
   .articles {
     //background-color: #ffffff;

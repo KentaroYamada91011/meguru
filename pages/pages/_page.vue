@@ -118,11 +118,12 @@ export default {
 @import '~assets/css/vars.scss';
 
 article {
-  //background-color: #ffffff;
   display: flex;
-  flex-direction: column;
   position: relative;
+  width: 1000px;
   height: 100%;
+  margin: 30px auto;
+  flex-direction: column;
 
   &.page-enter-active .narrow {
     transition: transform 1s cubic-bezier(.11,.89,.31,.99), opacity 0.75s ease-out;

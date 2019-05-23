@@ -110,9 +110,10 @@ export default {
 
 .author {
   display: flex;
+  width: 1000px;
+  margin: 30px auto;
 
   .articles {
-    //background-color: #ffffff;
     padding: 0 32px;
     max-width: 900px;
     width: 100%;
