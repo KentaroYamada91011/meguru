@@ -11,6 +11,7 @@
         </li>
       </ul>
     </div>
+    <SnsFollowLink/>
     <div class="inner-container">
       <h2>Top Articles</h2>
       <article v-for="article in featuredArticles" :key="article.id">
@@ -37,10 +38,12 @@
 
 <script>
 import Spinner1 from '~/components/Spinner1'
+import SnsFollowLink from '~/components/SnsFollowLink'
 
 export default {
   components: {
-    Spinner1
+    Spinner1,
+    SnsFollowLink
   },
   props: {
     featuredArticles: Array
