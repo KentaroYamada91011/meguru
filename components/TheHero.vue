@@ -16,8 +16,10 @@
         <div v-html="this.heroArticle.excerpt.rendered"></div>
       </div>
       <div class="featured-image lazy" v-if="featuredImage">
-        <div class="image-height" :style="paddingTop"></div>
-        <div class="image" v-lazy:backgroundImage="featuredImage.source_url"></div>
+        <!-- <div class="image-height" :style="paddingTop"></div> -->
+        <div class="image-height"></div>
+        <!-- <div class="image" v-lazy:backgroundImage="featuredImage.source_url"></div> -->
+        <video src="~assets/movie/megurumeHero.mp4" loop autoplay muted></video>
         <Spinner1/>
       </div>
     </nuxt-link>
@@ -152,12 +154,24 @@ export default {
       height: auto;
     }
 
-    .image {
+    // .image {
+    //   background-position: center;
+    //   background-repeat: no-repeat;
+    //   background-size: cover;
+    //   display: block;
+    //   height: 100%;
+    //   max-width: 100%;
+    //   position: absolute;
+    //   top: 0;
+    //   transition: transform 0.4s, opacity .5s;
+    //   width: 100%;
+    // }
+    video {
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
       display: block;
-      height: 100%;
+      height: auto;
       max-width: 100%;
       position: absolute;
       top: 0;
