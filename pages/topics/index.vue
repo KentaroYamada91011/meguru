@@ -1,18 +1,38 @@
 <template>
-  <div class="page">
-    <ul>
-      <li v-for="topic in $store.state.topics" v-if="topic.slug !== 'featured' && topic.count" :key="topic.id">
-        <nuxt-link :to="`/topics/${topic.slug}`">
-          <h2 v-html="topic.name"></h2>
-          <div v-html="topic.description"></div>
-        </nuxt-link>
-      </li>
-    </ul>
+  <div>
+    <BreadCrumbs :breadcrumbs="breadcrumbs" />
+    <div class="page">
+      <ul>
+        <li v-for="topic in $store.state.topics" v-if="topic.slug !== 'featured' && topic.count" :key="topic.id">
+          <nuxt-link :to="`/topics/${topic.slug}`">
+            <h2 v-html="topic.name"></h2>
+            <div v-html="topic.description"></div>
+          </nuxt-link>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
+import BreadCrumbs from '~/components/BreadCrumbs'
 export default {
+  components: {
+    BreadCrumbs
+  },
+  data () {
+    return {
+      breadcrumbs: [
+        {
+          name: 'ホーム',
+          path: '/'
+        },
+        {
+          name: 'トピックス'
+        }
+      ]
+    }
+  },
   async asyncData ({ app, store, params }) {
     if (!store.state.topics) {
       let topics = await app.$axios.get(`${store.state.wordpressAPI}/wp/v2/categories?per_page=100`)

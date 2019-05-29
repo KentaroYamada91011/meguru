@@ -1,30 +1,33 @@
 <template>
-  <div class="author">
-    <div class="articles">
-      <div class="page-title">
-        <h1>{{ author.name }}</h1>
-        <p v-if="author.description">{{ author.description }}</p>
+  <div>
+    <BreadCrumbs :breadcrumbs="breadcrumbs" />
+    <div class="author">
+      <div class="articles">
+        <div class="page-title">
+          <h1>{{ author.name }}</h1>
+          <p v-if="author.description">{{ author.description }}</p>
+        </div>
+        <ArticleList :articles="authorArticles.articles"/>
+        <InfiniteLoading
+          v-if="isLoadingMore"
+          ref="infiniteLoading"
+          :on-infinite="moreArticles"
+        >
+          <span slot="spinner">
+            <Spinner1/>
+          </span>
+          <span slot="no-results">
+            <Smile/>
+            <div>No more articles!</div>
+          </span>
+          <span slot="no-more">
+            <Smile/>
+            <div>No more articles!</div>
+          </span>
+        </InfiniteLoading>
       </div>
-      <ArticleList :articles="authorArticles.articles"/>
-      <InfiniteLoading
-        v-if="isLoadingMore"
-        ref="infiniteLoading"
-        :on-infinite="moreArticles"
-      >
-        <span slot="spinner">
-          <Spinner1/>
-        </span>
-        <span slot="no-results">
-          <Smile/>
-          <div>No more articles!</div>
-        </span>
-        <span slot="no-more">
-          <Smile/>
-          <div>No more articles!</div>
-        </span>
-      </InfiniteLoading>
+      <TheSidebar :featured-articles="$store.state.featuredArticles"/>
     </div>
-    <TheSidebar :featured-articles="$store.state.featuredArticles"/>
   </div>
 </template>
 
@@ -35,8 +38,24 @@ import TheSidebar from '~/components/TheSidebar'
 import InfiniteLoading from 'vue-infinite-loading/src/components/InfiniteLoading.vue'
 import Smile from '~/assets/svg/Smile.vue'
 import Spinner1 from '~/components/Spinner1.vue'
+import BreadCrumbs from '~/components/BreadCrumbs'
 
 export default {
+  created () {
+    this.breadcrumbs = [
+      {
+        name: 'ホーム',
+        path: '/'
+      },
+      {
+        name: 'ライター一覧',
+        path: '/authors'
+      },
+      {
+        name: this.author.name
+      }
+    ]
+  },
   async asyncData ({ app, store, params }) {
     if (!store.state.featuredArticles.length) {
       let articles = await app.$axios.get(`${store.state.wordpressAPI}/wp/v2/posts?orderby=date&per_page=10&categories=${store.state.featuredID}&_embed`)
@@ -60,7 +79,8 @@ export default {
     TheSidebar,
     InfiniteLoading,
     Smile,
-    Spinner1
+    Spinner1,
+    BreadCrumbs
   },
 
   computed: {
@@ -112,6 +132,9 @@ export default {
   display: flex;
   width: 1000px;
   margin: 30px auto;
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
 
   .articles {
     padding: 0 32px;

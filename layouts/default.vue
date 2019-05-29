@@ -26,6 +26,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~assets/css/common/variables.scss';
 @import '~assets/css/vars.scss';
 @import '~assets/css/vue-burger-menu.scss';
 // @import '~assets/css/common/variables.scss';
