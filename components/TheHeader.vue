@@ -87,7 +87,7 @@ header {
       color: #666;
       cursor: pointer;
       font-size: 1.5rem;
-      font-weight: 400;
+      font-weight: 800;
     }
   }
 

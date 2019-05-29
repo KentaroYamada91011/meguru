@@ -32,10 +32,11 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      { hid: 'description', name: 'description', content: '15秒で飲食店の魅力を最大限に伝える動画メディア 。「お店の雰囲気」「料理の躍動感」などをはっきり伝え、失敗しないお店選びができます。さらに「デート」「パーティ」「ひとり飯」「女子会」などなど 様々なイベントに最適なお店を提案することで、楽しい体験を届けます。' },
+      { hid: 'og:image', property: 'og:image', href: '/logo.png' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
     ]
   },
 

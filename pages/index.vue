@@ -100,7 +100,7 @@ export default {
 
   head () {
     return {
-      title: `Home | ${this.$store.state.meta.name}`,
+      title: `${this.$store.state.meta.name}`,
       meta: [
         { description: this.$store.state.meta.description }
       ]

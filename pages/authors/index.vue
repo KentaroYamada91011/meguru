@@ -1,18 +1,38 @@
 <template>
-  <div class="page">
-    <ul>
-      <li v-for="author in $store.state.authors" :key="author.id">
-        <nuxt-link :to="`/authors/${author.slug}`">
-          <h2 v-html="author.name"></h2>
-          <div v-html="author.description"></div>
-        </nuxt-link>
-      </li>
-    </ul>
+  <div>
+    <BreadCrumbs :breadcrumbs="breadcrumbs" />
+    <div class="page">
+      <ul>
+        <li v-for="author in $store.state.authors" :key="author.id">
+          <nuxt-link :to="`/authors/${author.slug}`">
+            <h2 v-html="author.name"></h2>
+            <div v-html="author.description"></div>
+          </nuxt-link>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
+import BreadCrumbs from '~/components/BreadCrumbs'
 export default {
+  components: {
+    BreadCrumbs
+  },
+  data () {
+    return {
+      breadcrumbs: [
+        {
+          name: 'ホーム',
+          path: '/'
+        },
+        {
+          name: 'ライター一覧'
+        }
+      ]
+    }
+  },
   async asyncData ({ app, store, params }) {
     if (!store.state.authors) {
       let authors = await app.$axios.get(`${store.state.wordpressAPI}/wp/v2/users?per_page=100`)
@@ -96,5 +116,5 @@ export default {
     }
   }
 }
-</style>
 
+</style>
