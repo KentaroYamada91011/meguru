@@ -30,6 +30,9 @@ const store = () => new Vuex.Store({
     topicArticles: [],
     topics: null,
     areatopics: null,
+    scenetopics: null,
+    pricetopics: null,
+    genretopics: null,
     wordpressAPI: 'https://niko0420.sakura.ne.jp/wp-01/wp-json'
   },
 
@@ -69,6 +72,15 @@ const store = () => new Vuex.Store({
     },
     setAreaTopics (state, data) {
       state.areatopics = data
+    },
+    setSceneTopics (state, data) {
+      state.scenetopics = data
+    },
+    setPriceTopics (state, data) {
+      state.pricetopics = data
+    },
+    setGenreTopics (state, data) {
+      state.genretopics = data
     }
   }
 })

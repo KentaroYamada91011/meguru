@@ -134,6 +134,7 @@ export default {
   margin: 30px auto;
   @media (max-width: 1000px) {
     width: 100%;
+    display: block;
   }
 
   .articles {

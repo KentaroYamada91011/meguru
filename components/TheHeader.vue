@@ -48,6 +48,7 @@ export default {
 <style lang="scss" scoped>
 @import '~assets/css/vars.scss';
 @import '~assets/css/vue-burger-menu.scss';
+@import '~assets/css/common/variables.scss';
 
 
 header {
@@ -67,7 +68,7 @@ header {
     max-width: $containerWidth;
     padding: 0 32px;
     transition: padding-top 0.5s, padding-bottom 0.5s;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(#fff, 0.8);
 
     @media (max-width: 700px) {
       height: 60px;
@@ -84,7 +85,7 @@ header {
     }
 
     h1 {
-      color: #666;
+      color: $yellow;
       cursor: pointer;
       font-size: 1.5rem;
       font-weight: 800;

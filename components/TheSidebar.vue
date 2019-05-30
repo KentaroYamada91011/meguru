@@ -1,10 +1,40 @@
 <template>
   <aside>
-    <div class="page">
-      <h2>エリア別グルメスポット</h2>
+    <!-- <div class="page"> -->
+      <!-- <h2>エリア別グルメスポット</h2>
       <h3>都心部</h3>
       <ul>
         <li v-for="topic in $store.state.areatopics" :key="topic.id">
+          <nuxt-link :to="`/topics/${topic.slug}`">
+            <h4 v-html="topic.name"></h4>
+          </nuxt-link>
+        </li>
+      </ul>
+    </div> -->
+    <div class="page">
+      <h2>値段</h2>
+      <ul>
+        <li v-for="topic in $store.state.genretopics" :key="topic.id">
+          <nuxt-link :to="`/topics/${topic.slug}`">
+            <h4 v-html="topic.name"></h4>
+          </nuxt-link>
+        </li>
+      </ul>
+    </div>
+    <div class="page">
+      <h2>シーン別</h2>
+      <ul>
+        <li v-for="topic in $store.state.scenetopics" :key="topic.id">
+          <nuxt-link :to="`/topics/${topic.slug}`">
+            <h4 v-html="topic.name"></h4>
+          </nuxt-link>
+        </li>
+      </ul>
+    </div>
+    <div class="page">
+      <h2>価格</h2>
+      <ul>
+        <li v-for="topic in $store.state.pricetopics" :key="topic.id">
           <nuxt-link :to="`/topics/${topic.slug}`">
             <h4 v-html="topic.name"></h4>
           </nuxt-link>
@@ -65,6 +95,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~assets/css/vars.scss';
+@import '~assets/css/common/variables.scss';
 
 aside {
   min-width: 360px;
@@ -72,7 +103,7 @@ aside {
   flex: 1;
 
   @media (max-width: 1000px) {
-    display: none;
+    display: block;
   }
 
   .inner-container {

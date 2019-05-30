@@ -19,6 +19,7 @@
             <span>{{ longTimestamp(page.date) }}</span>
             <span class="separator">|</span>
             <nuxt-link class="author fancy" :to="`/authors/${author.slug}`">{{ author.name }}</nuxt-link>
+            <nuxt-link class="topic fancy" v-for="topic in topics" :to="`/topics/${topic.slug}`" :key="topic.id" v-html="topic.name"></nuxt-link>
           </div>
         </div>
         <div class="content" id="article-content" v-html="page.content.rendered"></div>
@@ -65,6 +66,9 @@ export default {
     },
     author () {
       return this.$store.state.page._embedded.author[0]
+    },
+    topics () {
+      return this.$store.state.page._embedded.topic[0]
     },
     featuredImage () {
       let featuredImage = null

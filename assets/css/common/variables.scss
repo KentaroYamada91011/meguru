@@ -1,6 +1,5 @@
-$red:#E74C3C;
-$dark-red:#D24637;
-$light-red: #E95C4D;
+$yellow:#DE9624; //primary color
+$lightYellow:#F8E8A2;
 
 @mixin pc {
   @media screen and (min-width:750px) {

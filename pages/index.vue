@@ -76,6 +76,20 @@ export default {
       let areatopics = await app.$axios.get(`${store.state.wordpressAPI}/wp/v2/categories?parent=12&per_page=100`)
       store.commit('setAreaTopics', areatopics.data)
     }
+
+    if (!store.state.topics) {
+      let scenetopics = await app.$axios.get(`${store.state.wordpressAPI}/wp/v2/scene?per_page=100`)
+      store.commit('setSceneTopics', scenetopics.data)
+    }
+
+    if (!store.state.topics) {
+      let pricetopics = await app.$axios.get(`${store.state.wordpressAPI}/wp/v2/price?per_page=100`)
+      store.commit('setPriceTopics', pricetopics.data)
+    }
+    if (!store.state.topics) {
+      let genretopics = await app.$axios.get(`${store.state.wordpressAPI}/wp/v2/genre?per_page=100`)
+      store.commit('setGenreTopics', genretopics.data)
+    }
   },
 
   components: {
@@ -146,8 +160,9 @@ export default {
   }
 
   .contentWrapper {
-    display: flex;
+    display: block;
     @media (min-width: 700px) {
+      display: flex;
       width: 1000px;
       margin: 30px auto;
     }

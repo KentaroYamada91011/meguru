@@ -19,7 +19,7 @@
         <!-- <div class="image-height" :style="paddingTop"></div> -->
         <div class="image-height"></div>
         <!-- <div class="image" v-lazy:backgroundImage="featuredImage.source_url"></div> -->
-        <video src="~assets/movie/megurumeHero.mp4" loop autoplay muted></video>
+        <video preload="metadata"　src="~assets/movie/megurume.mp4" loop autoplay muted></video>
         <Spinner1/>
       </div>
     </nuxt-link>
@@ -150,9 +150,10 @@ export default {
     width: 100%;
     height: -webkit-fill-available;
     @media (max-width: 1000px) {
-      min-height: 240px;
+      min-height: 160px;
       height: auto;
     }
+
 
     // .image {
     //   background-position: center;
@@ -198,6 +199,9 @@ export default {
       font-size: 1.75rem;
       line-height: 1.2;
       margin: 0;
+      @media (max-width: 1000px) {
+        font-size: 24px
+      }
     }
 
     p {
