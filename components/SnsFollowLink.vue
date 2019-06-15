@@ -1,29 +1,19 @@
 <template>
   <ul class="footer-share">
     <li class="facebook">
-      <a href="https://www.facebook.com/letroncjp/" target="_blank" rel="nofollow">
-        <img src="~/assets/svg/icons/facebook.svg">
-      </a>
+      <img src="~/assets/svg/icons/facebook.svg">
     </li>
     <li class="twitter">
-      <a href="https://twitter.com/letroncjp" target="_blank" rel="nofollow">
-        <img src="~/assets/svg/icons/twitter.svg">
-      </a>
+      <img src="~/assets/svg/icons/twitter.svg">
     </li>
     <li class="instagram">
-      <a href="https://www.instagram.com/letronc.m/" target="_blank" rel="nofollow">
-        <img src="~/assets/svg/icons/instagram.svg">
-      </a>
+      <img src="~/assets/svg/icons/instagram.svg">
     </li>
     <li class="youtube">
-      <a href="https://www.youtube.com/channel/UCxI_jUcF-1aTMR71sReJqSA" target="_blank" rel="nofollow">
-        <img src="~/assets/svg/icons/youtube.svg">
-      </a>
+      <img src="~/assets/svg/icons/youtube.svg">
     </li>
     <li class="line">
-      <a href="https://line.me/R/ti/p/%40oa-letronc" target="_blank" rel="nofollow">
-        <img src="~/assets/svg/icons/line.svg">
-      </a>
+      <img src="~/assets/svg/icons/line.svg">
     </li>
   </ul>
 </template>
